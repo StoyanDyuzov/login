@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/login-design.css" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mahajani&family=Open+Sans&family=Poppins:wght@100;200&family=Roboto:wght@300;400&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper2">
+        <div class="wrapper21">
+            <div class="section00">
+                <h1>YOUR DATA:</h1>
+            </div>
+            
+            <div  class="section01">
+                <div class="section11">
+                    <h2>Name: <%=name%></h1>
+                    <h2 id="lemail">Email: <%=email%></h1>
+                    <h2>Password: <%=password%></h1>
+                </div>
+                <div class="section22">
+                    <form action="/changename" method="post">
+                        <h2 class="change1">New Email:</h2>
+                        <input type="text" name="newemail" class="newemail" placeholder="Enter your new email...">
+                        <button type="submit" class="change2">Change</button>
+                    </form>
+                </div>
+            </div>
+            <div class="section02">
+                <a href="/" class="logout">Log out</a>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    
+</body>
+</html>

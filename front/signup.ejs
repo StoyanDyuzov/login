@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" type="text/css" href="/login-design.css" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mahajani&family=Open+Sans&family=Poppins:wght@100;200&family=Roboto:wght@300;400&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+    <div class="main">
+        <div class="section1">
+            <h1>Welcome!</h1>
+            <h2>Please enter your signup details</h2>
+        </div>
+        <div class="section2">
+            <form action="/signupdata" method = "post">
+
+                <div class="section21">
+                    <h1>SIGN UP</h1>
+                </div>
+
+                <div class="section22">
+                    <p class="name-text">Name:</p>
+                    <input type="text" id="name" name="person_name" placeholder="Your name..."  class="name"></input>
+                    <p class="email-text">Email:</p>
+                    <input type = "text" id ="e-mail" name = "email" placeholder = "Your E-mail..."  class="input1"></input>
+                    <h1 id="message" class="message"><%=message%></h1>
+                    <p class="password-text">Password:</p>
+                    <input type = "password" id ="password" name="password" placeholder = "Password..." class="input1"></input>
+                    <h1 id="message1" class="message1">a</h1>
+                </div>
+                
+                <div class="section23">
+                    <button type="submit" class="login-btn">Sign up</button>
+                </div>
+                
+            </form>
+        </div>
+
+    </div>
+    </div>
+    
+    <script>
+        const message = document.getElementById("message").innerHTML
+        if(message === "no")
+        {
+            document.getElementById("message").style.display = "none"
+            document.getElementById("message1").style.display = "none"
+            document.getElementById("message0").style.display = "none"
+        }
+        else if(message == "This email is already taken!"){
+            document.getElementById("message").style.display = "block"
+            document.getElementById("message1").style.display = "none"
+            document.getElementById("message0").style.display = "none"
+        }
+        else if(message == "This password is already taken!"){
+            document.getElementById("message1").innerHTML = message
+            document.getElementById("message1").style.display = "block"
+            document.getElementById("message").style.display = "none"
+            document.getElementById("message0").style.display = "none"
+        }
+        else{
+            document.getElementById("message0").innerHTML = message
+            document.getElementById("message0").style.display = "block"
+            document.getElementById("message").style.display = "none"
+            document.getElementById("message1").style.display = "none"
+        }
+    </script>
+</body>
+</html>
